@@ -35,3 +35,7 @@ add_executable(BitTest bit_test.cc)
 target_link_libraries(BitTest gtest_main)
 gtest_discover_tests(BitTest)
 
+add_executable(DinicFlowTest dinic_flow_test.cc)
+target_link_libraries(DinicFlowTest gtest_main)
+gtest_discover_tests(DinicFlowTest)
+
