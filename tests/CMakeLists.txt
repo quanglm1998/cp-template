@@ -22,3 +22,7 @@ include(GoogleTest)
 add_executable(ModularTest modular_test.cc)
 target_link_libraries(ModularTest gtest_main)
 gtest_discover_tests(ModularTest)
+
+add_executable(DsuTest dsu_test.cc)
+target_link_libraries(DsuTest gtest_main)
+gtest_discover_tests(DsuTest)
