@@ -74,7 +74,7 @@ class Modular {
     return Modular(lhs) /= rhs;
   }
   friend istream& operator>>(istream& in, Modular& number) {
-    long long v;
+    int64_t v;
     in >> v;
     number = Modular(v);
     return in;
@@ -83,7 +83,7 @@ class Modular {
     return out << int(number);
   }
   friend string to_string(const Modular& number) {
-    return to_string(int(number));
+    return to_string(static_cast<int>(number));
   }
 
  private:
