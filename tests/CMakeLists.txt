@@ -39,3 +39,6 @@ add_executable(DinicFlowTest dinic_flow_test.cc)
 target_link_libraries(DinicFlowTest gtest_main)
 gtest_discover_tests(DinicFlowTest)
 
+add_executable(DinicFlowScalingTest dinic_flow_scaling_test.cc)
+target_link_libraries(DinicFlowScalingTest gtest_main)
+gtest_discover_tests(DinicFlowScalingTest)
