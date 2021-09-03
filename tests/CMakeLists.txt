@@ -26,3 +26,12 @@ gtest_discover_tests(ModularTest)
 add_executable(DsuTest dsu_test.cc)
 target_link_libraries(DsuTest gtest_main)
 gtest_discover_tests(DsuTest)
+
+add_executable(DsuRollBackTest dsu_rollback_test.cc)
+target_link_libraries(DsuRollBackTest gtest_main)
+gtest_discover_tests(DsuRollBackTest)
+
+# add_executable(BitTest bit_test.cc)
+# target_link_libraries(BitTest gtest_main)
+# gtest_discover_tests(BitTest)
+

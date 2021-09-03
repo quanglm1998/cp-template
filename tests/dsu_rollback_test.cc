@@ -97,7 +97,7 @@ TEST(DsuRollbackTest, Random) {
       dsu.Unite(u, v);
       states.push_back(dsu.GetState());
 
-      gs.push_back(GetCmps());
+      gs.push_back(GetComps());
     }
 
     for (int i = m - 1; i >= 0; i--) {
