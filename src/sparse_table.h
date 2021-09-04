@@ -3,7 +3,7 @@
 template <typename T>
 class SparseTable {
  public:
-  SparseTable(const vector<T>& a, const function<T(const T&, const T&)> f)
+  SparseTable(const vector<T>& a, const function<T(const T&, const T&)>& f)
       : func_(f) {
     assert(!a.empty());
     n_ = static_cast<int>(a.size());

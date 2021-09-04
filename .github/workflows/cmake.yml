@@ -12,12 +12,7 @@ env:
 
 jobs:
   gtest:
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest]
-        cxx: [g++, clang++]
-
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -30,6 +25,4 @@ jobs:
         cmake --build build
         cd build && ctest
       env:
-        CXX: ${{ matrix.cxx }}
-        STDCXX: ${{ matrix.stdcxx }}
         GTEST_COLOR: "1"
