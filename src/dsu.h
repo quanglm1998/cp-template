@@ -1,5 +1,4 @@
 #include "all.h"
-using namespace std;
 
 class DSU {
  public:

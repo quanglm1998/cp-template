@@ -1,5 +1,4 @@
 #include "all.h"
-using namespace std;
 
 // U = max capacity
 // Complexity: O(V^2 * E)

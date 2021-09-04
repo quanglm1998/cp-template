@@ -1,5 +1,4 @@
 #include "all.h"
-using namespace std;
 
 template <typename T>
 class BIT {

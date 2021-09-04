@@ -1,5 +1,4 @@
 #include "all.h"
-using namespace std;
 
 template <int MOD>
 class Modular {
