@@ -40,7 +40,7 @@ T MaxVal(const T &u, const T &v) {
 
 template <typename T>
 T GCD(T u, T v) {
-  return __gcd(u, v);
+  return std::gcd(u, v);
 }
 
 TEST(SparseTableTest, PowerOfTwo) {
