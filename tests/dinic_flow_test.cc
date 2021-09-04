@@ -61,7 +61,7 @@ TEST(DinicFlowTest, BoundUint) {
 }
 
 TEST(DinicFlowTest, Stress) {
-  for (int phase = 0; phase < 10000; phase++) {
+  for (int phase = 0; phase < 1000; phase++) {
     int n = rng() % 20 + 2;
     int m = rng() % 100 + 1;
     int s = rng() % n;
