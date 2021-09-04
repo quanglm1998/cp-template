@@ -45,3 +45,7 @@ gtest_discover_tests(DinicFlowScalingTest)
 add_executable(SparseTableTest sparse_table_test.cc)
 target_link_libraries(SparseTableTest gtest_main)
 gtest_discover_tests(SparseTableTest)
+
+add_executable(FftTest fft_test.cc)
+target_link_libraries(FftTest gtest_main)
+gtest_discover_tests(FftTest)
