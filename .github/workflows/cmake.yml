@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest]
-        cxx: [g++, clang++]
+        cxx: [g++]
         stdcxx: [14, 17]
 
     runs-on: ${{ matrix.os }}
