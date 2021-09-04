@@ -7,4 +7,4 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-python@v1
     - run: pip install cpplint
-    - run: cpplint --filter=-build/c++11,-build/header_guard,-build/namespaces,-legal/copyright,-build/include_subdir,-build/include_what_you_use --recursive .
+    - run: cpplint --filter=-build/c++11,-build/header_guard,-build/namespaces,-legal/copyright,-build/include_subdir,-build/include_what_you_use,-runtime/references --recursive .
