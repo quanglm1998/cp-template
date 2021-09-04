@@ -57,3 +57,7 @@ gtest_discover_tests(FftModTest)
 add_executable(NttTest ntt_test.cc)
 target_link_libraries(NttTest gtest_main)
 gtest_discover_tests(NttTest)
+
+add_executable(NttWithISTest ntt_with_is_test.cc)
+target_link_libraries(NttWithISTest gtest_main)
+gtest_discover_tests(NttWithISTest)
