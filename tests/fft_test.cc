@@ -41,14 +41,10 @@ TEST_F(FftTest, ConvLL) {
       vector<int64_t> a(n), b(m);
       for (int i = 0; i < n; i++) {
         a[i] = int64_t(rng() % 1'000'000) - 500'000;
-        cout << a[i] << ' ';
       }
-      cout << endl;
       for (int i = 0; i < m; i++) {
         b[i] = int64_t(rng() % 1'000'000) - 500'000;
-        cout << b[i] << ' ';
       }
-      cout << endl;
       EXPECT_EQ(Naive(a, b), fft_double_.Mult(a, b));
     }
   }
@@ -107,4 +103,19 @@ TEST_F(FftTest, FftBound) {
     u = rng() % 100'000'000 - 50'000'000;
   }
   EXPECT_EQ(Naive(c, d), fft_ld_.Mult(c, d));
+}
+
+TEST_F(FftTest, Size) {
+  for (int it = 0; it < 100; it++) {
+    int n = rng() % 100 + 1;
+    int m = rng() % 100 + 1;
+    vector<int64_t> a(n), b(m);
+    for (auto &u : a) {
+      u = rng() % 4'000'000 - 2'000'000;
+    }
+    for (auto &u : b) {
+      u = rng() % 2'000'000 - 1'000'000;
+    }
+    EXPECT_EQ(Naive(a, b), fft_double_.Mult(a, b));
+  }
 }

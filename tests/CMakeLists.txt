@@ -49,3 +49,7 @@ gtest_discover_tests(SparseTableTest)
 add_executable(FftTest fft_test.cc)
 target_link_libraries(FftTest gtest_main)
 gtest_discover_tests(FftTest)
+
+add_executable(FftModTest fft_mod_test.cc)
+target_link_libraries(FftModTest gtest_main)
+gtest_discover_tests(FftModTest)
