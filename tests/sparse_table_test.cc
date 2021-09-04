@@ -14,7 +14,7 @@ TEST(SparseTableTest, One) {
 
 template <typename T>
 void TestRMQ(const vector<T> &a, const SparseTable<T> &t,
-             const function<T(T, T)> &func) {
+             const function<T(const T&, const T&)> &func) {
   int n = a.size();
   for (int i = 0; i < N; i++) {
     int l = rng() % n;
