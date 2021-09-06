@@ -18,12 +18,12 @@ class DinicFlow {
         cur_(n, 0) {}
 
   void set_source(int u) {
-    assert(u < n_);
+    assert(u >= 0 && u < n_);
     source_ = u;
   }
 
   void set_sink(int u) {
-    assert(u < n_);
+    assert(u >= 0 && u < n_);
     sink_ = u;
   }
 
