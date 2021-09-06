@@ -65,3 +65,7 @@ gtest_discover_tests(NttWithISTest)
 add_executable(MinCostFlowTest mincost_flow_test.cc)
 target_link_libraries(MinCostFlowTest gtest_main)
 gtest_discover_tests(MinCostFlowTest)
+
+add_executable(MinCostFlowPotentialTest mincost_flow_potential_test.cc)
+target_link_libraries(MinCostFlowPotentialTest gtest_main)
+gtest_discover_tests(MinCostFlowPotentialTest)

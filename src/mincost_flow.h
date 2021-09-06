@@ -2,7 +2,6 @@
 
 // Complexity: O(V^2 * E^2)
 // O(VE) phases, O(VE) for SPFA
-// Tested: https://open.kattis.com/problems/mincostMaxFlow
 template <class F, typename enable_if<is_integral<F>::value>::type* = nullptr>
 class MinCostFlow {
   inline static const F INF = numeric_limits<F>::max();

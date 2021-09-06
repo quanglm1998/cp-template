@@ -94,7 +94,7 @@ TEST_F(NttTest, Size) {
 
 TEST_F(NttTest, Inv) {
   for (int it = 0; it < 100; it++) {
-    int n = rng() % N + 1;
+    int n = rng() % 100 + 1;
     vector<Mint> a(n);
     for (auto &u : a) {
       u = Mint(rng() % MOD);
@@ -112,7 +112,7 @@ TEST_F(NttTest, Inv) {
 
 TEST_F(NttTest, Sqrt) {
   for (int it = 0; it < 100; it++) {
-    int n = rng() % N + 1;
+    int n = rng() % 100 + 1;
     vector<Mint> a(n);
     for (auto &u : a) {
       u = Mint(rng() % MOD);
