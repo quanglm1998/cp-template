@@ -69,3 +69,7 @@ gtest_discover_tests(MinCostFlowTest)
 add_executable(MinCostFlowPotentialTest mincost_flow_potential_test.cc)
 target_link_libraries(MinCostFlowPotentialTest gtest_main)
 gtest_discover_tests(MinCostFlowPotentialTest)
+
+add_executable(SlopeTrickTest slope_trick_test.cc)
+target_link_libraries(SlopeTrickTest gtest_main)
+gtest_discover_tests(SlopeTrickTest)
