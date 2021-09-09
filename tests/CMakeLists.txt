@@ -73,3 +73,7 @@ gtest_discover_tests(MinCostFlowPotentialTest)
 add_executable(SlopeTrickTest slope_trick_test.cc)
 target_link_libraries(SlopeTrickTest gtest_main)
 gtest_discover_tests(SlopeTrickTest)
+
+add_executable(AhoCorasickTest aho_corasick_test.cc)
+target_link_libraries(AhoCorasickTest gtest_main)
+gtest_discover_tests(AhoCorasickTest)
