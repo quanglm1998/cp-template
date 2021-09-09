@@ -77,3 +77,7 @@ gtest_discover_tests(SlopeTrickTest)
 add_executable(AhoCorasickTest aho_corasick_test.cc)
 target_link_libraries(AhoCorasickTest gtest_main)
 gtest_discover_tests(AhoCorasickTest)
+
+add_executable(KmpTest kmp_test.cc)
+target_link_libraries(KmpTest gtest_main)
+gtest_discover_tests(KmpTest)
