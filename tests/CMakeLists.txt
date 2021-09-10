@@ -81,3 +81,7 @@ gtest_discover_tests(AhoCorasickTest)
 add_executable(KmpTest kmp_test.cc)
 target_link_libraries(KmpTest gtest_main)
 gtest_discover_tests(KmpTest)
+
+add_executable(SuffixArrayTest suffix_array_test.cc)
+target_link_libraries(SuffixArrayTest gtest_main)
+gtest_discover_tests(SuffixArrayTest)
