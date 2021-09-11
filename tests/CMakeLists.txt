@@ -85,3 +85,7 @@ gtest_discover_tests(KmpTest)
 add_executable(SuffixArrayTest suffix_array_test.cc)
 target_link_libraries(SuffixArrayTest gtest_main)
 gtest_discover_tests(SuffixArrayTest)
+
+add_executable(BitwiseFftTest bitwise_fft_test.cc)
+target_link_libraries(BitwiseFftTest gtest_main)
+gtest_discover_tests(BitwiseFftTest)
