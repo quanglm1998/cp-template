@@ -89,3 +89,7 @@ gtest_discover_tests(SuffixArrayTest)
 add_executable(BitwiseFftTest bitwise_fft_test.cc)
 target_link_libraries(BitwiseFftTest gtest_main)
 gtest_discover_tests(BitwiseFftTest)
+
+add_executable(HashArrayTest hash_array_test.cc)
+target_link_libraries(HashArrayTest gtest_main)
+gtest_discover_tests(HashArrayTest)
