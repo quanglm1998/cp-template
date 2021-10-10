@@ -93,3 +93,7 @@ gtest_discover_tests(BitwiseFftTest)
 add_executable(HashArrayTest hash_array_test.cc)
 target_link_libraries(HashArrayTest gtest_main)
 gtest_discover_tests(HashArrayTest)
+
+add_executable(SegmentTreeTest segment_tree_test.cc)
+target_link_libraries(SegmentTreeTest gtest_main)
+gtest_discover_tests(SegmentTreeTest)
