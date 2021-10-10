@@ -1,7 +1,7 @@
 #include "all.h"
 
-// Complexity: O(VE * ElogV + VE)
-// O(VE) phases, O(ElogV) or Dijkstra, O(VE) for the Initial SPFA
+// Complexity: O(F * ElogV + VE)
+// F = O(2 ^ V/2) phases, O(ElogV) or Dijkstra, O(VE) for the Initial SPFA
 // --> RUN Init BEFORE MaxFlow IF WE HAVE NEGATIVE-COST EDGES <--
 template <class F, typename enable_if<is_integral<F>::value>::type* = nullptr>
 class MinCostFlowPotential {

@@ -1,7 +1,7 @@
 #include "all.h"
 
-// Complexity: O(V^2 * E^2)
-// O(VE) phases, O(VE) for SPFA
+// Complexity: O(F * VE)
+// F = O(2 ^ V/2) phases, O(VE) for SPFA
 template <class F, typename enable_if<is_integral<F>::value>::type* = nullptr>
 class MinCostFlow {
   inline static const F INF = numeric_limits<F>::max();
