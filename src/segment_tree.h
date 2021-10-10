@@ -92,11 +92,15 @@ class SegmentTree {
   //   - v is in the segment [x, y]
   //   - and f(u) = true if node u contains position v
   // Returns -1 if we can't find such position v
-  int LeftMostHas(int x, int y, const function<bool(const T &)> &f) {
-    return LeftMostHas(1, 0, n_ - 1, x, y, f);
+  template <typename S>
+  int LeftMostHas(int x, int y, const function<bool(const T &, const S &)> &f,
+                  const S &val) {
+    return LeftMostHas(1, 0, n_ - 1, x, y, f, val);
   }
-  int RightMostHas(int x, int y, const function<bool(const T &)> &f) {
-    return RightMostHas(1, 0, n_ - 1, x, y, f);
+  template <typename S>
+  int RightMostHas(int x, int y, const function<bool(const T &, const S &)> &f,
+                   const S &val) {
+    return RightMostHas(1, 0, n_ - 1, x, y, f, val);
   }
 
  private:
@@ -138,30 +142,34 @@ class SegmentTree {
     return res;
   }
 
+  template <typename S>
   int LeftMostHas(int node, int l, int r, int x, int y,
-                  const function<bool(const T &)> &f) {
+                  const function<bool(const T &, const S &)> &f, const S &val) {
     if (x > r || y < l) return -1;
-    if (!f(t_[node])) return -1;
+    if (!f(t_[node], val)) return -1;
     if (l == r) return l;
     int m = l + r >> 1;
     t_[node].Push(l, r, t_[node << 1], t_[node << 1 | 1]);
-    if (int res = LeftMostHas(node << 1, l, m, x, y, f); res != -1) {
+    if (int res = LeftMostHas(node << 1, l, m, x, y, f, val); res != -1) {
       return res;
     }
-    return LeftMostHas(node << 1 | 1, m + 1, r, x, y, f);
+    return LeftMostHas(node << 1 | 1, m + 1, r, x, y, f, val);
   }
 
+  template <typename S>
   int RightMostHas(int node, int l, int r, int x, int y,
-                   const function<bool(const T &)> &f) {
+                   const function<bool(const T &, const S &)> &f,
+                   const S &val) {
     if (x > r || y < l) return -1;
-    if (!f(t_[node])) return -1;
+    if (!f(t_[node], val)) return -1;
     if (l == r) return l;
     int m = l + r >> 1;
     t_[node].Push(l, r, t_[node << 1], t_[node << 1 | 1]);
-    if (int res = RightMostHas(node << 1 | 1, m + 1, r, x, y, f); res != -1) {
+    if (int res = RightMostHas(node << 1 | 1, m + 1, r, x, y, f, val);
+        res != -1) {
       return res;
     }
-    return RightMostHas(node << 1, l, m, x, y, f);
+    return RightMostHas(node << 1, l, m, x, y, f, val);
   }
 
   int n_;

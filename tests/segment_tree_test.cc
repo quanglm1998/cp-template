@@ -147,10 +147,13 @@ TEST(SegmentTreeTest, LeftRightMost) {
         int l = rng() % n;
         int r = rng() % n;
         if (l > r) swap(l, r);
+
+        function<bool(const NodeMax<int> &, const int &)> Greater =
+            [&](const NodeMax<int> &t, const int &val) {
+              return t.max_val >= val;
+            };
+
         int val = rng() % (*max_element(a.begin(), a.end()) + 1);
-
-        auto Greater = [&](const NodeMax<int> &t) { return t.max_val >= val; };
-
         int left_pos = -1;
         for (int i = l; i <= r; i++) {
           if (a[i] >= val) {
@@ -165,8 +168,8 @@ TEST(SegmentTreeTest, LeftRightMost) {
             break;
           }
         }
-        ASSERT_EQ(left_pos, t.LeftMostHas(l, r, Greater));
-        ASSERT_EQ(right_pos, t.RightMostHas(l, r, Greater));
+        ASSERT_EQ(left_pos, t.LeftMostHas(l, r, Greater, val));
+        ASSERT_EQ(right_pos, t.RightMostHas<int>(l, r, Greater, val));
       }
     }
   }
